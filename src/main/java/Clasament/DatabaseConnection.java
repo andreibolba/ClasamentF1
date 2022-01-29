@@ -232,7 +232,7 @@ public class DatabaseConnection {
                     }
                 }catch (SQLException e){
                     Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Taken team name");
+                    alert.setTitle("Taken team name!");
                     alert.setContentText("Team name is taken! Please modify your dates! ");
                     alert.show();
                 }
