@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Clasament.logInController">
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <children>
+      <HBox alignment="CENTER" layoutY="337.0" prefHeight="129.0" prefWidth="800.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#teamRegister" prefHeight="40.0" prefWidth="150.0" text="Register">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#BackOnLogIn" prefHeight="40.0" prefWidth="150.0" text="Back">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <VBox alignment="CENTER" layoutX="142.0" layoutY="101.0" prefHeight="251.0" prefWidth="503.0">
+         <children>
+            <Label alignment="TOP_LEFT" text="Team Name">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="teamName" prefHeight="25.0" prefWidth="370.0" promptText="Insert team name">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="125.0" right="125.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

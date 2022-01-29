@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Clasament.PersonalController">
+   <children>
+      <HBox alignment="CENTER" layoutX="-1.0" layoutY="364.0" prefHeight="138.0" prefWidth="800.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#editRemove" prefHeight="40.0" prefWidth="150.0" text="Edit">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#backToMain" prefHeight="40.0" prefWidth="150.0" text="Back">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <VBox layoutX="136.0" layoutY="74.0" prefHeight="335.0" prefWidth="526.0">
+         <children>
+            <HBox prefHeight="12.0" prefWidth="526.0">
+               <children>
+                  <Label prefHeight="30.0" prefWidth="205.0" text="ID">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="id" prefHeight="30.0" prefWidth="324.0" text="Label">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="15.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="12.0" prefWidth="526.0">
+               <children>
+                  <Label prefHeight="30.0" prefWidth="205.0" text="Username">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="username" prefHeight="30.0" prefWidth="324.0" text="Label">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="15.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="12.0" prefWidth="526.0">
+               <children>
+                  <Label prefHeight="30.0" prefWidth="205.0" text="Nume">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nume" prefHeight="30.0" prefWidth="324.0" text="Label">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="15.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="12.0" prefWidth="526.0">
+               <children>
+                  <Label prefHeight="30.0" prefWidth="205.0" text="Prenume">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="prenume" prefHeight="30.0" prefWidth="324.0" text="Label">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="15.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="12.0" prefWidth="526.0">
+               <children>
+                  <Label prefHeight="30.0" prefWidth="205.0" text="Monopost">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="monopost" prefHeight="30.0" prefWidth="324.0" text="Label">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="15.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="12.0" prefWidth="526.0">
+               <children>
+                  <Label prefHeight="30.0" prefWidth="205.0" text="Echipa">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="echipa" prefHeight="30.0" prefWidth="324.0" text="Label">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="15.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="12.0" prefWidth="526.0">
+               <children>
+                  <Label prefHeight="30.0" prefWidth="205.0" text="Compond">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="compond" prefHeight="30.0" prefWidth="324.0" text="Label">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Label layoutX="325.0" layoutY="31.0" text="Personal Profile">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
