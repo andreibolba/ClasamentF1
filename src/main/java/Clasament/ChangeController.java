@@ -54,23 +54,37 @@ public class ChangeController {
 
     @FXML
     void updateAccount(){
-        if(newfName.getText().isEmpty()==false&&newlName.getText().isEmpty()==false&&newTeamID.getText().isEmpty()==false&&newMonopostID.getText().isEmpty()==false){
-            String nume,prenume;
-            int ID= usersEntity.getID(), teamID=Integer.parseInt(newTeamID.getText()),monopostID=Integer.parseInt(newMonopostID.getText());
-            if(newfName.getText().isEmpty())
-                nume= usersEntity.getfName();
-            else
-                nume=newfName.getText();
-            if(newlName.getText().isEmpty())
-                prenume= usersEntity.getlName();
-            else
-                prenume=newlName.getText();
-            databaseConnection.updateAccount(ID,nume,prenume,teamID,monopostID);
-        }else{
+        if(newfName.getText().isEmpty()==true&&newlName.getText().isEmpty()==true&&newTeamID.getText().isEmpty()==true&&newMonopostID.getText().isEmpty()==true){
             Alert alert=new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Empty text field");
             alert.setContentText("Empty text field.");
             alert.show();
+
+        }else{
+            String nume,prenume;
+            int ID= usersEntity.getID(), teamID,monopostID;
+            if(newfName.getText().isEmpty())
+                nume= usersEntity.getfName();
+            else
+                nume=newfName.getText();
+
+            if(newlName.getText().isEmpty())
+                prenume= usersEntity.getlName();
+            else
+                prenume=newlName.getText();
+
+            if(newTeamID.getText().isEmpty())
+                teamID=usersEntity.getIdEchipa();
+            else
+                teamID=Integer.parseInt(newTeamID.getText());
+
+            if(newMonopostID.getText().isEmpty())
+                monopostID= usersEntity.getIdMonopost();
+            else
+                monopostID=Integer.parseInt(newMonopostID.getText());
+            databaseConnection.updateAccount(ID,nume,prenume,teamID,monopostID);
+            usersEntity= databaseConnection.getUserById(usersEntity.getID());
+            usersEntity.write();
         }
     }
 

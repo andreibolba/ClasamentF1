@@ -13,14 +13,14 @@ public class UsersEntity {
     private String role;
     private String compond;
     private Integer idEchipa;
-    private String monopost;
+    private int idMonopost;
     private boolean valid;
 
     public UsersEntity(){
 
     }
 
-    public UsersEntity(int id, String username, String fName, String lName, String teamName, String monopostName, String role,String compond,Integer idEchipa) {
+    public UsersEntity(int id, String username, String fName, String lName, String teamName, String monopostName, String role, String compond, Integer idEchipa, int idMonopost) {
         ID = id;
         this.username = username;
         this.fName = fName;
@@ -30,6 +30,7 @@ public class UsersEntity {
         this.role = role;
         this.compond=compond;
         this.idEchipa=idEchipa;
+        this.idMonopost = idMonopost;
     }
 
     public int getID() {return ID;}
@@ -54,7 +55,7 @@ public class UsersEntity {
         try {
             FileOutputStream fileOutputStream= new FileOutputStream("I:\\FMI-AnII\\Semestrul_1\\MIP\\ClasamentF1\\src\\main\\java\\Entity\\userInformationLogIn.txt");
             PrintWriter printWriter=new PrintWriter(fileOutputStream);
-            printWriter.write(ID+"\n"+username+"\n"+fName+"\n"+lName+"\n"+teamName+"\n"+monopostName+"\n"+role+"\n"+compond+"\n"+idEchipa);
+            printWriter.write(ID+"\n"+username+"\n"+fName+"\n"+lName+"\n"+teamName+"\n"+monopostName+"\n"+role+"\n"+compond+"\n"+idEchipa+"\n"+idMonopost);
             printWriter.close();
             System.out.println("Successfully wrote to the file.");
         } catch (IOException e) {
@@ -78,6 +79,7 @@ public class UsersEntity {
             compond=myReader.nextLine();
             echipa=myReader.nextLine();
             idEchipa=Integer.parseInt(echipa);
+            idMonopost=Integer.parseInt(myReader.nextLine());
             myReader.close();
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
@@ -99,5 +101,13 @@ public class UsersEntity {
 
     public void setValid(boolean valid) {
         this.valid = valid;
+    }
+
+    public int getIdMonopost() {
+        return idMonopost;
+    }
+
+    public void setIdMonopost(int idMonopost) {
+        this.idMonopost = idMonopost;
     }
 }

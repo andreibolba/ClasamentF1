@@ -41,7 +41,7 @@ public class DatabaseConnection {
     public UsersEntity getUser(String username){
         try {
             UsersEntity usersEntity = new UsersEntity();
-            String sql = "SELECT users.id_user,users.nume,users.prenume,users.username,echipa.nume as nume_echipa, monopost.marca,monopost.compond, users.roles, users.id_echipa  FROM users JOIN echipa ON echipa.id_echipa=users.id_echipa JOIN monopost ON monopost.id_monopost=users.id_monopost WHERE users.username='" + username + "'";
+            String sql = "SELECT users.id_user,users.nume,users.prenume,users.username,echipa.nume as nume_echipa, monopost.marca,monopost.compond, users.roles, users.id_echipa, monopost.id_monopost  FROM users JOIN echipa ON echipa.id_echipa=users.id_echipa JOIN monopost ON monopost.id_monopost=users.id_monopost WHERE users.username='" + username + "'";
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             usersEntity.setRole("Fail");
@@ -55,6 +55,45 @@ public class DatabaseConnection {
                 usersEntity.setRole(resultSet.getString("roles"));
                 usersEntity.setCompond(resultSet.getString("compond"));
                 usersEntity.setIdEchipa(resultSet.getInt("id_echipa"));
+                usersEntity.setIdMonopost(resultSet.getInt("id_monopost"));
+            }
+            System.out.println();
+            return usersEntity;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            System.out.println("Error catch");
+        } finally {
+            try {
+                if (connection != null && !connection.isClosed()) {
+                    connection.close();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                System.out.println("Error finally");
+            }
+        }
+        return new UsersEntity();
+    }
+
+    public UsersEntity getUserById(int id){
+        try {
+            UsersEntity usersEntity = new UsersEntity();
+            String sql = "SELECT users.id_user,users.nume,users.prenume,users.username,echipa.nume as nume_echipa, monopost.marca,monopost.compond, users.roles, users.id_echipa, monopost.id_monopost  FROM users JOIN echipa ON echipa.id_echipa=users.id_echipa JOIN monopost ON monopost.id_monopost=users.id_monopost WHERE users.id_user='" + id + "'";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            usersEntity.setRole("Fail");
+            while (resultSet.next()) {
+                usersEntity.setID(resultSet.getInt("id_user"));
+                usersEntity.setUsername(resultSet.getString("username"));
+                usersEntity.setfName(resultSet.getString("nume"));
+                usersEntity.setlName(resultSet.getString("prenume"));
+                usersEntity.setTeamName(resultSet.getString("nume_echipa"));
+                usersEntity.setMonopostName(resultSet.getString("marca"));
+                usersEntity.setRole(resultSet.getString("roles"));
+                usersEntity.setCompond(resultSet.getString("compond"));
+                usersEntity.setIdEchipa(resultSet.getInt("id_echipa"));
+                usersEntity.setIdMonopost(resultSet.getInt("id_monopost"));
             }
             System.out.println();
             return usersEntity;
