@@ -42,6 +42,11 @@ public class StageCRUDController {
     @FXML private TextField distanceF;
     @FXML private TextField lapsF;
     @FXML private TextField dateF;
+    @FXML private Button delete;
+    @FXML private Button update;
+    @FXML private Button create;
+    @FXML private Button validate;
+
 
     @FXML
     public void initialize() {
@@ -49,16 +54,36 @@ public class StageCRUDController {
         stages=databaseConnection.getAllStages();
         view(index);
         prev.setVisible(false);
+        boolean rol=usersEntity.getRole().equals("Administrator");
+        update.setVisible(rol);
+        create.setVisible(rol);
+        delete.setVisible(rol);
+        validate.setVisible(rol);
+        nameF.setVisible(rol);
+        stageLocationF.setVisible(rol);
+        distanceF.setVisible(rol);
+        lapsF.setVisible(rol);
+        dateF.setVisible(rol);
     }
 
     @FXML
     void backToMain(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("MainAdminPage.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setTitle("Main Admin Page");
-        stage.setScene(scene);
-        stage.show();
+        if(usersEntity.getRole().length()=="Administrator".length())
+        {
+            Parent root = FXMLLoader.load(getClass().getResource("MainAdminPage.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setTitle("Main Admin Page");
+            stage.setScene(scene);
+            stage.show();
+        }else{
+            Parent root = FXMLLoader.load(getClass().getResource("MainConcurentPage.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setTitle("Main Concurent Page");
+            stage.setScene(scene);
+            stage.show();
+        }
 
     }
 

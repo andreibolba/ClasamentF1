@@ -37,15 +37,22 @@ public class TeamsController {
         team=teams.get(i);
         id.setText(String.valueOf(team.getId()));
         teamName.setText(team.getName());
-        if(team.isVerify()==true)
-        {
-            verify.setText("Yes");
+        if(usersEntity.getRole().equals("Administrator")) {
+            if (team.isVerify() == true) {
+                verify.setText("Yes");
+                verifyButton.setVisible(false);
+            } else {
+                verify.setText("No");
+                verifyButton.setVisible(true);
+            }
+        }else{
             verifyButton.setVisible(false);
-        }
-        else
-        {
-            verify.setText("No");
-            verifyButton.setVisible(true);
+            if (team.isVerify() == true) {
+                verify.setText("Yes");
+            } else {
+                verify.setText("No");
+
+            }
         }
         membersNumber.setText(String.valueOf(team.getMemebers()));
     }
@@ -60,12 +67,22 @@ public class TeamsController {
 
     @FXML
     void backToMain(ActionEvent event) throws IOException {
+        if(usersEntity.getRole().length()=="Administrator".length())
+        {
             Parent root = FXMLLoader.load(getClass().getResource("MainAdminPage.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setTitle("Main Admin Page");
             stage.setScene(scene);
             stage.show();
+        }else{
+            Parent root = FXMLLoader.load(getClass().getResource("MainConcurentPage.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setTitle("Main Concurent Page");
+            stage.setScene(scene);
+            stage.show();
+        }
 
     }
 

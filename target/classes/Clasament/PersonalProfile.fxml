@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Clasament.PersonalController">
    <children>
-      <HBox alignment="CENTER" layoutX="-1.0" layoutY="364.0" prefHeight="138.0" prefWidth="800.0">
+      <HBox alignment="CENTER" layoutX="-1.0" layoutY="437.0" prefHeight="65.0" prefWidth="800.0">
          <children>
             <Button mnemonicParsing="false" onAction="#editRemove" prefHeight="40.0" prefWidth="150.0" text="Edit">
                <HBox.margin>
@@ -24,7 +24,7 @@
             </Button>
          </children>
       </HBox>
-      <VBox layoutX="136.0" layoutY="74.0" prefHeight="335.0" prefWidth="526.0">
+      <VBox layoutX="136.0" layoutY="74.0" prefHeight="355.0" prefWidth="526.0">
          <children>
             <HBox prefHeight="12.0" prefWidth="526.0">
                <children>
@@ -131,7 +131,7 @@
                   </Label>
                </children>
             </HBox>
-            <HBox prefHeight="12.0" prefWidth="526.0">
+            <HBox prefHeight="44.0" prefWidth="526.0">
                <children>
                   <Label prefHeight="30.0" prefWidth="205.0" text="Compond">
                      <font>
@@ -139,6 +139,20 @@
                      </font>
                   </Label>
                   <Label fx:id="compond" prefHeight="30.0" prefWidth="324.0" text="Label">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="46.0" prefWidth="526.0">
+               <children>
+                  <Label prefHeight="30.0" prefWidth="205.0" text="Valid">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="valid" prefHeight="30.0" prefWidth="323.0" text="Label">
                      <font>
                         <Font size="20.0" />
                      </font>
