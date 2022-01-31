@@ -41,7 +41,7 @@ public class DatabaseConnection {
     public UsersEntity getUser(String username){
         try {
             UsersEntity usersEntity = new UsersEntity();
-            String sql = "SELECT users.id_user,users.nume,users.prenume,users.username,echipa.nume as nume_echipa, monopost.marca,monopost.compond, users.roles, users.id_echipa, monopost.id_monopost  FROM users JOIN echipa ON echipa.id_echipa=users.id_echipa JOIN monopost ON monopost.id_monopost=users.id_monopost WHERE users.username='" + username + "'";
+            String sql = "SELECT users.id_user,users.nume,users.prenume,users.username,echipa.nume as nume_echipa, monopost.marca,monopost.compond, users.roles, users.id_echipa, monopost.id_monopost, users.ok  FROM users JOIN echipa ON echipa.id_echipa=users.id_echipa JOIN monopost ON monopost.id_monopost=users.id_monopost WHERE users.username='" + username + "'";
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             usersEntity.setRole("Fail");
@@ -56,6 +56,8 @@ public class DatabaseConnection {
                 usersEntity.setCompond(resultSet.getString("compond"));
                 usersEntity.setIdEchipa(resultSet.getInt("id_echipa"));
                 usersEntity.setIdMonopost(resultSet.getInt("id_monopost"));
+                usersEntity.setValid(resultSet.getBoolean("ok"));
+                System.out.println(resultSet.getBoolean("ok"));
             }
             System.out.println();
             return usersEntity;
@@ -79,7 +81,7 @@ public class DatabaseConnection {
     public UsersEntity getUserById(int id){
         try {
             UsersEntity usersEntity = new UsersEntity();
-            String sql = "SELECT users.id_user,users.nume,users.prenume,users.username,echipa.nume as nume_echipa, monopost.marca,monopost.compond, users.roles, users.id_echipa, monopost.id_monopost  FROM users JOIN echipa ON echipa.id_echipa=users.id_echipa JOIN monopost ON monopost.id_monopost=users.id_monopost WHERE users.id_user='" + id + "'";
+            String sql = "SELECT users.id_user,users.nume,users.prenume,users.username,echipa.nume as nume_echipa, monopost.marca,monopost.compond, users.roles, users.id_echipa, monopost.id_monopost, users.ok  FROM users JOIN echipa ON echipa.id_echipa=users.id_echipa JOIN monopost ON monopost.id_monopost=users.id_monopost WHERE users.id_user='" + id + "'";
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             usersEntity.setRole("Fail");
@@ -94,6 +96,7 @@ public class DatabaseConnection {
                 usersEntity.setCompond(resultSet.getString("compond"));
                 usersEntity.setIdEchipa(resultSet.getInt("id_echipa"));
                 usersEntity.setIdMonopost(resultSet.getInt("id_monopost"));
+                usersEntity.setValid(resultSet.getBoolean("ok"));
             }
             System.out.println();
             return usersEntity;

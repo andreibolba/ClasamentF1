@@ -24,6 +24,7 @@ public class PersonalController {
     @FXML Label echipa;
     @FXML Label monopost;
     @FXML Label compond;
+    @FXML Label valid;
 
     @FXML
     public void initialize() {
@@ -35,6 +36,10 @@ public class PersonalController {
         echipa.setText(usersEntity.getTeamName());
         monopost.setText(usersEntity.getMonopostName());
         compond.setText(usersEntity.getCompond());
+        if(usersEntity.isValid()==true)
+        valid.setText("Yes");
+        else
+            valid.setText("No");
     }
 
     @FXML

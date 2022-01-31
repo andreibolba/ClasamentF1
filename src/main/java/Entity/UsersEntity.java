@@ -55,7 +55,7 @@ public class UsersEntity {
         try {
             FileOutputStream fileOutputStream= new FileOutputStream("I:\\FMI-AnII\\Semestrul_1\\MIP\\ClasamentF1\\src\\main\\java\\Entity\\userInformationLogIn.txt");
             PrintWriter printWriter=new PrintWriter(fileOutputStream);
-            printWriter.write(ID+"\n"+username+"\n"+fName+"\n"+lName+"\n"+teamName+"\n"+monopostName+"\n"+role+"\n"+compond+"\n"+idEchipa+"\n"+idMonopost);
+            printWriter.write(ID+"\n"+username+"\n"+fName+"\n"+lName+"\n"+teamName+"\n"+monopostName+"\n"+role+"\n"+compond+"\n"+idEchipa+"\n"+idMonopost+"\n"+valid);
             printWriter.close();
             System.out.println("Successfully wrote to the file.");
         } catch (IOException e) {
@@ -80,6 +80,7 @@ public class UsersEntity {
             echipa=myReader.nextLine();
             idEchipa=Integer.parseInt(echipa);
             idMonopost=Integer.parseInt(myReader.nextLine());
+            valid=Boolean.parseBoolean(myReader.nextLine());
             myReader.close();
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
