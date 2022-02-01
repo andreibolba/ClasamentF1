@@ -27,6 +27,21 @@
                   <Insets top="20.0" />
                </VBox.margin>
             </Button>
+            <Button mnemonicParsing="false" onAction="#onActiveStage" prefHeight="40.0" prefWidth="160.0" text="Stages">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#onValidUser" prefHeight="40.0" prefWidth="160.0" text="Competitors">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#onTeams" prefHeight="40.0" prefWidth="160.0" text="Teams">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Button>
          </children>
       </VBox>
       <Label fx:id="label" layoutX="90.0" layoutY="56.0" prefHeight="40.0" prefWidth="214.0" text="Label" AnchorPane.bottomAnchor="417.0" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="503.0" AnchorPane.topAnchor="43.0">

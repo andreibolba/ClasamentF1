@@ -17,11 +17,6 @@
                   <Insets right="15.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#backToMain" prefHeight="40.0" prefWidth="150.0" text="Back">
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </Button>
          </children>
       </HBox>
       <VBox alignment="CENTER" layoutX="136.0" layoutY="74.0" prefHeight="286.0" prefWidth="526.0">
@@ -108,7 +103,12 @@
          <children>
             <Button fx:id="prev" mnemonicParsing="false" onAction="#onPrevButton" prefHeight="40.0" prefWidth="150.0" text="Previously">
                <HBox.margin>
-                  <Insets left="15.0" />
+                  <Insets left="15.0" right="15.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#backToMain" prefHeight="40.0" prefWidth="150.0" text="Back">
+               <HBox.margin>
+                  <Insets left="15.0" right="15.0" />
                </HBox.margin>
             </Button>
             <Button fx:id="next" mnemonicParsing="false" onAction="#onNextButton" prefHeight="40.0" prefWidth="150.0" text="Next">

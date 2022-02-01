@@ -146,26 +146,22 @@
       </Label>
       <HBox alignment="CENTER" layoutX="8.0" layoutY="364.0" prefHeight="55.0" prefWidth="790.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#deleteStage" prefHeight="44.0" prefWidth="122.0" text="Delete">
+            <Button fx:id="delete" mnemonicParsing="false" onAction="#deleteStage" prefHeight="44.0" prefWidth="122.0" text="Delete">
                <HBox.margin>
                   <Insets left="15.0" right="15.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#onUpdate" prefHeight="44.0" prefWidth="122.0" text="Update">
+            <Button fx:id="update" mnemonicParsing="false" onAction="#onUpdate" prefHeight="44.0" prefWidth="122.0" text="Update">
                <HBox.margin>
                   <Insets left="15.0" right="15.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#onInsert" prefHeight="44.0" prefWidth="122.0" text="Create">
+            <Button fx:id="create" mnemonicParsing="false" onAction="#onInsert" prefHeight="44.0" prefWidth="122.0" text="Create">
                <HBox.margin>
                   <Insets left="15.0" right="15.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#backToMain" prefHeight="44.0" prefWidth="122.0" text="Back">
-               <HBox.margin>
-                  <Insets left="15.0" right="15.0" />
-               </HBox.margin>
-            </Button>
+            <Button fx:id="validate" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#validate" prefHeight="44.0" prefWidth="122.0" text="Validate" />
          </children>
       </HBox>
       <HBox alignment="CENTER" layoutX="1.0" layoutY="419.0" prefHeight="55.0" prefWidth="800.0">
@@ -175,7 +171,11 @@
                   <Insets left="15.0" right="15.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="prev1" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#validate" prefHeight="44.0" prefWidth="122.0" text="Validate" />
+            <Button mnemonicParsing="false" onAction="#backToMain" prefHeight="44.0" prefWidth="122.0" text="Back">
+               <HBox.margin>
+                  <Insets left="15.0" right="15.0" />
+               </HBox.margin>
+            </Button>
             <Button fx:id="next" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onNextButton" prefHeight="44.0" prefWidth="122.0" text="Next">
                <HBox.margin>
                   <Insets left="15.0" right="15.0" />

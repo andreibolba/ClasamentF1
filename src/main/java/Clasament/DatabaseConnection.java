@@ -261,7 +261,7 @@ public class DatabaseConnection {
     public void newTeam(String teamName)
     {
                 try {
-                    String sql = "INSERT INTO echipa (nume) VALUES (?)";
+                    String sql = "INSERT INTO echipa (nume,ok) VALUES (?,'false')";
                     PreparedStatement statement = connection.prepareStatement(sql);
 
                     statement.setString(1, teamName);
