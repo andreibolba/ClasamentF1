@@ -53,7 +53,7 @@ public class UsersEntity {
 
     public void write(){
         try {
-            FileOutputStream fileOutputStream= new FileOutputStream("I:\\FMI-AnII\\Semestrul_1\\MIP\\ClasamentF1\\src\\main\\java\\Entity\\userInformationLogIn.txt");
+            FileOutputStream fileOutputStream= new FileOutputStream("J:\\Java\\ClasamentF1\\src\\main\\java\\Entity\\userInformationLogIn.txt");
             PrintWriter printWriter=new PrintWriter(fileOutputStream);
             printWriter.write(ID+"\n"+username+"\n"+fName+"\n"+lName+"\n"+teamName+"\n"+monopostName+"\n"+role+"\n"+compond+"\n"+idEchipa+"\n"+idMonopost+"\n"+valid);
             printWriter.close();
@@ -67,7 +67,7 @@ public class UsersEntity {
     public void read(){
         try {
             String echipa;
-            File myObj = new File("I:\\FMI-AnII\\Semestrul_1\\MIP\\ClasamentF1\\src\\main\\java\\Entity\\userInformationLogIn.txt");
+            File myObj = new File("J:\\Java\\ClasamentF1\\src\\main\\java\\Entity\\userInformationLogIn.txt");
             Scanner myReader = new Scanner(myObj);
             ID=Integer.parseInt(myReader.nextLine());
             username=myReader.nextLine();
